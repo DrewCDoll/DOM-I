@@ -39,4 +39,27 @@ const siteContent = {
 
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+logo.setAttribute('src', siteContent["nav"]["img-src"]);
+
+//images
+document.getElementById('cta-img').setAttribute('src', siteContent['cta']['img-src'] );
+document.getElementById('middle-img').setAttribute('src', siteContent['main-content']['middle-img-src']);
+
+//nav area
+document.querySelectorAll('nav a')[0].textContent = siteContent["nav"]['nav-item-1'];
+document.querySelectorAll('nav a')[1].textContent = siteContent["nav"]['nav-item-2'];
+document.querySelectorAll('nav a')[2].textContent = siteContent["nav"]['nav-item-3'];
+document.querySelectorAll('nav a')[3].textContent = siteContent["nav"]['nav-item-4'];
+document.querySelectorAll('nav a')[4].textContent = siteContent["nav"]['nav-item-5'];
+document.querySelectorAll('nav a')[5].textContent = siteContent["nav"]['nav-item-6'];
+
+//cta area
+document.querySelector('.cta-text h1').textContent = siteContent['cta']['h1'];
+document.querySelector('.cta-text button').textContent = siteContent['cta']['button'];
+
+//main content text content items
+let textCont = document.querySelectorAll('.text-content');
+textCont[0].querySelector('h4').textContent = siteContent['main-content']['features-h4'];
+textCont[0].querySelector('p').textContent = siteContent['main-content']['features-content'];
+textCont[1].querySelector('h4').textContent = siteContent['main-content']['about-h4'];
+textCont[1].querySelector('p').textContent = siteContent['main-content']['about-content'];
