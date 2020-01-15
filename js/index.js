@@ -53,6 +53,26 @@ document.querySelectorAll('nav a')[3].textContent = siteContent["nav"]['nav-item
 document.querySelectorAll('nav a')[4].textContent = siteContent["nav"]['nav-item-5'];
 document.querySelectorAll('nav a')[5].textContent = siteContent["nav"]['nav-item-6'];
 
+
+//add two items to the navigation section
+//append
+let node = document.createElement("a");                 
+let textnode = document.createTextNode("Pricing");         
+node.appendChild(textnode);                              
+document.querySelector("nav").appendChild(node);     
+
+//prepend                 
+let node1 = document.createElement("a");
+let textnode1 = document.createTextNode("Staff");         
+node1.appendChild(textnode1);                              
+document.querySelector("nav").prepend(node1);   
+
+//set nav color to green
+const clrText = document.querySelectorAll('nav a');
+clrText.forEach(item => item.style.color = 'green');
+
+
+
 //cta area
 document.querySelector('.cta-text h1').textContent = siteContent['cta']['h1'];
 document.querySelector('.cta-text button').textContent = siteContent['cta']['button'];
@@ -63,3 +83,19 @@ textCont[0].querySelector('h4').textContent = siteContent['main-content']['featu
 textCont[0].querySelector('p').textContent = siteContent['main-content']['features-content'];
 textCont[1].querySelector('h4').textContent = siteContent['main-content']['about-h4'];
 textCont[1].querySelector('p').textContent = siteContent['main-content']['about-content'];
+textCont[2].querySelector('h4').textContent = siteContent['main-content']['services-h4'];
+textCont[2].querySelector('p').textContent = siteContent['main-content']['services-content'];
+textCont[3].querySelector('h4').textContent = siteContent['main-content']['product-h4'];
+textCont[3].querySelector('p').textContent = siteContent['main-content']['product-content'];
+textCont[4].querySelector('h4').textContent = siteContent['main-content']['vision-h4'];
+textCont[4].querySelector('p').textContent = siteContent['main-content']['vision-content'];
+
+// contact area
+document.querySelector('.contact h4').textContent = siteContent['contact']['contact-h4'];
+document.querySelectorAll('.contact p')[0].textContent = siteContent['contact']['address'];
+document.querySelectorAll('.contact p')[1].textContent = siteContent['contact']['phone'];
+document.querySelectorAll('.contact p')[2].textContent = siteContent['contact']['email'];
+
+//footer
+document.querySelector('footer p').textContent = siteContent['footer']['copyright'];
+
