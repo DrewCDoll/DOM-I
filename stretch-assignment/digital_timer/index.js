@@ -12,13 +12,17 @@ window.onload = function() {
     let oneCount  = 0;
     let tensCount = 0;
     let hundsCount = 0;
-
+    let myTimer
 
     function countTimer () {
 
         if (tenCount === 1) {
-            clearInterval(MyTimer);
+            clearInterval(myTimer);
             document.getElementsByClassName('digits')[0].style.color = 'red';
+            tenCount = 0;
+            oneCount  = 0;
+            tensCount = 0;
+            hundsCount = 0;
         } else {
             if (hundsCount === 9) {
                 hundsCount = 0;
@@ -49,7 +53,7 @@ window.onload = function() {
     }
 
 
-    let MyTimer = setInterval(countTimer, 10);
+    // let MyTimer = setInterval(countTimer, 10);
     // function runTimer() {
     //     let MyTimer = setInterval(countTimer, 10);
     //     MyTimer;
@@ -62,9 +66,6 @@ window.onload = function() {
         document.getElementById('secondOnes').textContent = '-';
         document.getElementById('secondTens').textContent = '-'; 
     };
-
-
-
 
     document.body.style.flexDirection = 'column';
     document.body.style.margin = '4rem auto';
@@ -81,14 +82,22 @@ window.onload = function() {
     let strtBtn = document.createElement('button');
     strtBtn.setAttribute('id', 'startButn'); 
     strtBtn.textContent = "Start";
+    strtBtn.style.borderRadius = '4px';
+    strtBtn.onclick = () => {
+        myTimer = setInterval(countTimer, 10)
+        strtBtn.disabled = true
+        };
     document.getElementById('control').appendChild(strtBtn);
 
     let resetBtn = document.createElement('button');
-    resetBtn.id = 'resetBtn';
+    resetBtn.id = 'resetButn';
     resetBtn.textContent = 'Reset';
+    resetBtn.style.borderRadius = '4px';
+    resetBtn.onclick = () => {
+        resetTimer()
+        strtBtn.disabled = false
+        };
     document.getElementById('control').appendChild(resetBtn);
 
-    // document.getElementById('strtBtn').addEventListener('click', runTimer());
-    document.getElementById('resetBtn').addEventListener('click', resetTimer());
-
+    
 };
