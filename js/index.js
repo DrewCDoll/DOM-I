@@ -73,6 +73,7 @@ clrText.forEach(item => item.style.color = 'green');
 
 
 
+
 //cta area
 document.querySelector('.cta-text h1').textContent = siteContent['cta']['h1'];
 document.querySelector('.cta-text button').textContent = siteContent['cta']['button'];
@@ -98,4 +99,37 @@ document.querySelectorAll('.contact p')[2].textContent = siteContent['contact'][
 
 //footer
 document.querySelector('footer p').textContent = siteContent['footer']['copyright'];
+
+//stretch goal - add a button that updates content on click
+let btnNode = document.createElement('button');
+btnNode.setAttribute('id', 'attrChangeBtn');
+btnNode.style.display = 'block';
+btnNode.style.alignItems = 'center';
+btnNode.style.margin = '2rem 2rem 0 0';
+btnNode.style.color = 'purple';
+btnNode.style.borderRadius = '5px';
+btnNode.style.width = '10rem';
+btnNode.style.height = '2rem';
+btnNode.textContent = 'Color Delta';
+document.querySelector('header').prepend(btnNode);
+
+function navColor() {
+  const clrText = document.querySelectorAll('nav a');
+  const curColor = clrText[0].style.color;
+  if (curColor === 'green') {
+    clrText.forEach(item => item.style.color = 'red');
+  } else {
+    clrText.forEach(item => item.style.color = 'green');
+  }
+};
+
+window.onclick = function(event) {
+  if (event.target.id  === "attrChangeBtn") {
+      navColor();
+  }
+};
+
+
+
+
 
